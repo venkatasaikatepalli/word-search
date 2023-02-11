@@ -1,0 +1,794 @@
+OS-COPILOT
+A PROJECT REPORT
+                     Submitted by
+
+       KATEPALLI NAVEEN
+       KONKIMALLA NITHIN
+      GANDIKOTA RAMACHANDRA
+       NALLA RAMA SURYA PRAKASH
+
+In Partial fulfillment for the award of the degree of
+BACHELOR OF TECHNOLOGY
+
+in
+
+COMPUTER SCIENCE AND ENGINEERING
+
+Under the Guidance of     
+Dr. Vipul Dabhi
+
+
+
+
+
+Department of Computer Science & Engineering Parul University, Vadodara
+
+July, 2023 
+ 
+
+PARUL UNIVERSITY
+
+CERTIFICATE
+This is to Certify that Project - 1-Subject code 203105350 of 7th Semester entitled “OS-COPILOT” of Group No.PUCSE-162  has been successfully completed by
+KATEPALLI NAVEEN-190304105114
+
+KONKIMALLA NITHIN-190304105115
+
+GANDIKOTA RAMACHANDRA-
+    190304105152
+
+ NALLA RAMA SURYA PRAKASH-
+    190304105157
+under my guidance in partial fulfillment of the Bachelor of Technology (B.TECH) in Computer Science and Engineering of Parul University in Academic Year 2022- 2023.
+
+ 
+Project Guide           Dr. Vipul Dabhi
+ 
+Project Coordinator
+Prof. Khushali Mistry Prof. Yatin shukla
+ 
+
+ 
+Head of Department, CSE
+Dr. Amit Barve
+ 
+
+External Examiner
+
+ 
+ACKNOWLEDGEMENT
+
+
+
+Behind any major work undertaken by an individual there lies the contribution of the people who helped him to cross all the hurdles to achieve his goal. It gives me the immense pleasure to express my sense of sincere gratitude towards my respected guide Dr. Vipul Dabhi,  for his persistent, outstanding, invaluable cooperation and guidance. It is my achievement to be guided under him. He is a constant source of encouragement and momentum that any intricacy becomes simple. I gained a lot of invaluable guidance and prompt suggestions from him during entire project work. I will be indebted of him forever and I take pride to work under him.I also express my deep sense of regards and thanks to Dr. Amit Barve (Head of Computer Science and Engineering Department). I feel very privileged to have had their precious advices, guidance and leadership.Last but not the least, my humble thanks to the Almighty God.
+
+
+
+
+
+
+
+
+
+
+Place: Vadodara	NALLA RAMA SURYA PRAKASH	190304105157
+Date:	GANDIKOTA RAMCHANDRA	190304105152
+	NITHIN KONKIMALLA	190304105115
+	KATEPALLI NAVVEN	190304105114
+
+
+
+
+
+
+
+
+Abstract:
+
+
+The main aim of this system is to suggest text and maintain correct grammar and spellings of the content created by the user. this system will allow user to save time in typing the whole content by hand, provide the well structured sentences and productivity.
+
+The technologies which will be used in the system are similar to the already existing technologies like Github-copilot and Grammarly. Opensource platforms like codex of OpenAI will be used in this project. many modern technologies like big data, data analysis, machine learning, natural language processing will be used in this project.
+
+This project will be essentially creating new interface in side the user interface of word and notepad. This interface will give user essential tools for more productive and easy usage of platforms. As time goes by we can add more specifications to the software according to user feedback. Making the mentioned platforms more user friendly to the user is the mail goal of the project.
+
+There are many technologies that we have to learn in order build this project. For example: python, machine learning, natural language processing, data analysis and more. Especially python is a very important language to learn in order to manage all the other technologies. Modules like matplotlib, numpy of python are very use full for data analysis. Module called pand as is important for machine learning and natural language processing technologies.
+
+The main task of the system is to suggest the text to user based on the previous texts of the content and also provide spelling and grammar check services to the user to maintain best sentence structure. Huge datasets of English vocabulary and grammar are required to train the model.
+
+The processing power to the text suggester will be provided by open source AI platform like OpenAI. The codex platform of OpenAI provides required algorithms and models for the task.
+
+
+
+
+
+
+
+
+
+
+
+
+
+INDEX
+
+Chapter-1    	1.1-Introduction
+		1.2-Problem Statement
+		1.3-Existing Solution
+		1.4-Innovation from existing solution
+		1.5-Advantages
+		1.6-Disadvantages
+
+Chapter-2	Literature Review
+		2.1 – Paper 1  : OpenAI Codex
+		2.2 – Paper 2  : Grammarly English Writing Assistant.
+		2.3 – Paper 3  : An Introduction to Copilot
+		2.4 – Paper 4  : Introduction of Natural language processing
+		2.5 – Paper 5  : Automated Deep/Machine Learning for Natural Language Processing
+		2.6 – Paper 6  : GitHub Copilot
+		2.7 – Paper 7  : A Hard Real-Time Runtime Monitor
+		2.8 – Paper 8  : Runtime Monitoring On Hard Real-Time Operating Systems
+		2.9 – Paper 9  : Copilot: Monitoring Embedded Systems
+		2.10-Paper 10 : Copilot - a Coprocessor-based Kernel Runtime Integrity Monitor
+		2.11-Paper 11 : Machine Learning for Programming Languages
+		2.12-Paper 12 : Automatic Program Repair with OpenAI’s Codex
+		2.13-Paper 13 : A Predictive Text Completion Software in Python
+		2.14-Paper 14 : Suggestion Mining from Opinionated Text
+		2.15-Paper 15 : Open Domain Suggestion Mining Leveraging Fine-Grained Analysis
+		2.16-Paper 16 : Big data analytics: a survey
+2.17-Paper 17 : Big Data Analytics:Challenges And Applications For Text, Social Media                                                   
+		2.18-Paper 18 : A Study And Survey Of Big Data Using Data Mining Techniques.
+		2.19-Paper 19 : Mining Big Data in Real Time
+		2.20-Paper 20 : Text Mining in Big Data Analytics
+		
+Chapter-3	Methodology of text suggestion and grammar check
+		3.1 - Collection of statement of the content from the user
+		3.2 - Pre-Processing
+		3.3 - Display and selection of suggestion
+		3.4 - Collect privious text from the content
+		3.5 - Processing the data and prediction of output
+		3.6 - Display and selection of suggestion
+		3.7 - Checking for error in spelling and grammar
+		3.8 - Display and selection of suggestion
+
+Chapter-4	4.1-Future Work
+		4.2-conclution
+
+CHAPTER-1
+
+1.1 Introduction:
+	Today with computer technology at it’s all time best new methods and applications are created everyday to make life more easy and more productive.
+	Recently software like ‘’Tabnine’’ and ‘‘Github-copilot’’ are providing great assistance to programmers and made then more efficient and productive.
+	Today 59.5% of the global population has access to internet and most of them are educated, so Microsoft’s  OS and Apple’s OS became part of our life  
+
+1.2 Problem Statement:
+	‘OS-co pilot’ provides a special interface between user and MS word and notepad applications in every operating system.
+	This interface gives assistance to user through text suggestion based on previous texts and provide spelling and grammar check.
+MS word
+
+Github-copilot
+
+
+
+1.3 Existing Solutions:
+
+	MS word provides some extent of grammar and spelling check.
+	It allows us to paste and insert content from existing platforms but will not provide any text suggestion during typing the content.
+	The user interface is so complex in existing platform that users have to take special courses to use them extensively.
+
+
+1.4 Innovation from existing solution:
+
+	Nowadays text suggestion software for computer programmers are widely available then
+	For example:
+	Tabline
+	Github-copilot
+	Software like Grammarly for spelling and grammar checking in browser usage is also available.
+	Combining Grammarly and github-copilot and introducing it into word and notepads gives a lot of advantages over existing platforms.
+1.5 Advantages:
+
+	User can learn good grammar and spelling through rectifying the mistakes on spot.
+	Low time consuming but efficient content creation.
+	User friendly interface allows more users to make use of the platform.
+
+1.6 Disadvantages:
+
+	Irresponsible usage of the interface can make user lazy.
+	Internet connectivity is must to use the platform.
+	Marginal error in the interface may lead to mistakes.
+
+
+
+
+
+
+
+CHAPTER-2
+2.1 PAPER 1 : OpenAI Codex
+
+Author : 1) Alford
+	    2) Anthony
+
+Theory:
+OpenAI Codex is an artificial intelligence model developed by OpenAI. it is an autocompiltion tool for visual code.OpenAI claims that Codex is able to function in over a dozen programming languages, including Go, JavaScript, Perl, PHP, Ruby, Shell, Swift, and TypeScript, though it is most effective in Python.The demonstrators were able to create a browser game in JavaScript and generate data science charts using matplotlib.OpenAI has shown that Codex is able to interface with services and apps such as Mailchimp, Microsoft Word, Spotify, and Google Calendar.but this having some issues it demonstrations showcased flaws such as inefficient code and one-off quirks in code samples.VentureBeat has stated that because Codex is trained on public data, it could be vulnerable to "data poisoning" via intentional uploads of malicious code and approximately 40% of code generated by GitHub Copilot (which uses Codex) included glitches.and the free software has expressed concerns that code snippets generated by Copilot and Codex could unknowingly violate the terms of free software licenses, such as the GPL, which requires derivative works to be licensed under equivalent terms.In response, OpenAI has stated that "legal uncertainty on the copyright implications of training AI systems imposes substantial costs on AI developers and so should be authoritatively resolved and an internal GitHub study found that approximately 0.1% of generated code contained direct copies from the training data.According to a paper written by OpenAI researchers, when attempting each test case 100 times, 70.2% of prompts had working solutions.and OpenAI has released an API for Codex in closed beta.
+References :
+1.	^ Jump up to:a b c Zaremba, Wojciech (August 10, 2021). "OpenAI Codex". OpenAI. Retrieved 2021-09-03.
+2.	^ Wiggers, Kyle (July 8, 2021). "OpenAI warns AI behind GitHub's Copilot may be susceptible to bias". VentureBeat. Retrieved 2021-09-03.
+2.2 PAPER 2 : Grammarly English Writing Assistant.
+
+Author : 1) Gitsaki, C., & Coombe, c.
+
+Theory :
+Grammarly is an online grammar checker and spelling checker in English structure and corrects mistakes in writing. Grammarly provides correct word recommendations if there are wrong words in the English structure. Before, using Grammarly, the users can upload a file for checking, below the pictures of  Grammarly after the user has installed it. Below the beginning view of uploading the document in Grammarly as follow first they have uploaded the document or text in grammarly and then explained features of grammarly is to eliminate spelling and then grammatical and then punctuation errors these are free features of Grammarly and they have explained the terms that grammarly will check performance, word count and then readability.and the grammarly products are The Grammarly Editor, Browser Extension, Grammarly for Microsoft Office, Grammarly for Your Desktop, The Grammarly Keyboard, and Grammarly for iPad.and the use Grammarly works by suggesting corrections for spelling mistakes that are automatically highlighted, suggesting synonyms for words on double-tap, and substitutions for or suggestions for removing overused words.
+References :
+[1] Bouchoux,  D. E.  (2019). Legal  Research  and Writing  for Paralegals.  Wolters Kluwer Law & Business. 
+[2] Carter, S., & Laurs, D. (2017).  Developing  Research Writing: A Handbook for 
+Supervisors and Advisors. Routledge. 
+
+[3] Dewi, N.  A. (2019, July 10). The Effectiveness of Grammarly Checker Toward 
+Student's  Writing  Quality  of  English  Departement  Students  At  IAIN 
+Tulungagung  [Skripsi].  IAIN  Tulungagung. 
+https://doi.org/10/CHAPTER%20I.pdf 
+
+[4]Fadhilah, U. (2018). Effectiveness of Grammarly Application for Writing English 
+Abstract. 8(12), 4. 
+
+[5] Fairbairn, G., & Winch, C. (2011). Reading, Writing and Reasoning: A Guide for 
+Students. McGraw-Hill Education (UK). 
+
+[6] Faller,  J.  M.  V.  (2018).  Grammarly  Investigation  into  EFL  Writing  Issues 
+
+
+2.3 PAPER 3 : An Introduction to Copilot
+Author : 1) M.B. Dwyer
+	    2) M. Diep
+	    3) S.Elbaum
+Theory :
+In this they have explained about the application domain that we have to target and about installation and the structure and sampilng of the domain and aslo about interpreting & compiling co-pilot.Copilot is a domain-specific language tailored to programming runtime monitors for hard real-time, distributed, reactive systems,A hard real-time system is a system that has a statically bounded execution time and memory usage.And to install copilot they suggested to methods hackage and another from source code.so they said to prefer hackage because from the lastest version can be installed very easily. and the struture of Copilot is distributed through a series of packages at Hackage is copilot-language: Contains the language front-end.copilot-theorem: Contains extensions to the language for proving properties about Copilot programs using various SMT solvers and model checkers.copilot-core: Contains an intermediate representation for Copilot programs.copilot-c99: A back-end for Copilot targeting C99. copilot-libraries: A set of utility functions for Copilot, including a clock-library, a lineartemporal logic framework, a voting library, and a regular expression framework. and also interpreting copilot a directory containing a .hs file with our specification (Spec.hs inthis case),and that Copilot is installed globally and comipling copilot Currently Copilot supports one back-end, copilot-c99 that creates constant-space C99 code. and the language is used is functional programming language haskell.and copilot is a pure declarative language.
+References :
+[1] [BF93] R. W. Butler and G. B. Finelli. The infeasibility of quantifying the reliability of lifecritical real-time software. IEEE Transactions on Software Engineering, 19:3–12, January 1993. 
+[2[ [DDE08] M.B. Dwyer, M. Diep, and S. Elbaum. Reducing the cost of path property monitoring through sampling. In Proceedings of the 23rd International Conference on Automated Software 
+2.4 PAPER 4 : Introduction of Natural language processing
+Author :  1) Xiaoyong Liu
+Theory :
+In this they are analyzing text based on both set of theories and a set of technologies, the natural language processing is actually about achieving human-like language processing for a range of tasks or applications. they also have explained about the goal of this process is to accomplish human like language processsing, to achieve this they followed four steps.They are paraphrase an input text,Translate the text into another language, Answer questions about the contents of the text, draw inferences from the text. they have aslo explained about origins of this process.they concerned about this  Key among the contributors to the discipline and practice of  NLP are: Linguistics - focuses on formal, structural models of language and the discovery of language universals - in fact the field of NLP was originally referred to as Computational Linguistics; Computer Science - is concerned with developing internal representations of data and efficient processing of these structures, and; Cognitive Psychology - looks at language usage as a window into human cognitive processes, and has the goal of modeling the use of language in a psychologically plausible way. and this process having approaches to achieve, they are followed as symbolic approach,stastical approach,Connectionist Approach,Comparison Among Approaches In these NLP process they have explained certain levels to follow,and this also called as synchronic model of language.In these the steps followed as phonology,morphology,lexical,synatatic,semantic,discourse,pragmatic.They have aslo mentioned about approaches to natural language processing,they are categorized as symbolic approach,Statistical Approach,Connectionist Approach,Comparison Among Approaches.Applicatons on natural language processing,they are Information Retrieval,Information Extraction,Question-Answering,Summarization,Machine Translation,Dialogue Systems. and then they are concluded as NLP is a relatively recent area of research and application, as compared to other information technology approaches, there have been sufficient successes to date that suggest that NLP-based information access technologies will continue to be a major area of research and development in information systems now and far into the future.
+
+
+References :
+1.	Kongthon, Alisa; Sangkeettrakarn, Chatchawal; Kongyoung, Sarawoot; Haruechaiyasak, Choochart (October 27–30, 2009). Implementing an online help desk system based on conversational agent. MEDES '09: The International Conference on Management of Emergent Digital EcoSystems. France: ACM. doi:10.1145/1643823.1643908.
+2.	^ Hutchins, J. (2005). "The history of machine translation in a nutshell" (PDF).[self-published source]
+3.	^ Koskenniemi, Kimmo (1983), Two-level morphology: A general computational model of word-form recognition and production (PDF), Department of General Linguistics, University of Helsinki
+4.	^ Joshi, A. K., & Weinstein, S. (1981, August). Control of Inference: Role of Some Aspects of Discourse Structure-Centering. In IJCAI (pp. 385-387).
+5.	^ Guida, G.; Mauri, G. (July 1986). "Evaluation of natural language processing systems: Issues and approaches". Proceedings of the IEEE. 74 (7): 1026–1035. doi:10.1109/PROC.1986.13580. ISSN 1558-2256. S2CID 30688575.
+6.	^ Chomskyan linguistics encourages the investigation of "corner cases" that stress the limits of its theoretical models (comparable to pathological phenomena in mathematics), typically created using thought experiments, rather than the systematic investigation of typical phenomena that occur in real-world data, as is the case in corpus linguistics. The creation and use of such corpora of real-world data is a fundamental part of machine-learning algorithms for natural language processing. In addition, theoretical underpinnings of Chomskyan linguistics such as the so-called "poverty of the stimulus" argument entail that general learning algorithms, as are typically used in machine learning, cannot be successful in language processing. As a result, the Chomskyan paradigm discouraged the application of such models to language processing.
+7.	^ Goldberg, Yoav (2016). "A Primer on Neural Network Models for Natural Language Processing". Journal of Artificial Intelligence Research. 57: 345–420. arXiv:1807.10854. doi:10.1613/jair.4992. S2CID 8273530.
+8.	^ Goodfellow, Ian; Bengio, Yoshua; Courville, Aaron (2016). Deep Learning. MIT Press.
+
+
+2.5 PAPER 5 : Automated Deep/Machine Learning for Natural Language Processing:
+Author : 1) Rendyk
+Theory : 
+The article discussed the fundamentals of Natural Language Processing (NLP) and later demonstrates using Automated Machine Learning (AutoML) to build models to predict the sentiment of text data.and the article explained the topics about Regular expression,Word tokenization,Named Entity Recognition,Stemming and lemmatization,Word cloud,Bag-of-words (BoW),Term Frequency — Inverse Document Frequency (TF-IDF),Sentiment analysis,Text Regression,Text Classification.and they concluded that nlp targets to analyze large amount of data,some exapmples for predicting text using machine learning.AutoKeras is a package to perform text regression and classification using Deep Learning.
+References : 
+1.I. Goodfellow, Y. Bengio and A. Courville, Deep Learning, MIT Press, 2016, [online] Available: http://www.deeplearningbook.org.
+2.Y. Goldberg, A primer on neural network models for natural language processing, CoRR, vol. abs/1510.00726, 2015.
+3.C.D. Manning and H. Schütze, Foundations of Statistical Natural Language Processing, Cambridge, MA, USA:MIT Press, 1999.
+4.P. Klosowski, "Speech Processing Application Based on Phonetics and Phonology of the Polish Language", 17th International Conference Computer Networks, vol. 79, pp. 236-244, Jun 15–19, 2010.
+5.P. Klosowski, "Improving speech processing based on phonetics and phonology of Polish language", Przeglą d Elektrotechniczny, vol. 89, no. 8/2013, pp. 303-307, 2013.
+6.J. Izydorczyk and P. Klosowski, "Acoustic properties of Polish vowels", Bulletin of the Polish Academy of Science - Technical Sciences, vol. 47, no. 1, pp. 29-37, 1999.
+7.J. Izydorczyk and P. Klosowski, "Base acoustic properties of Polish speech", International Conference Programable Devices and Systems PDS2001 IFAC Workshop Gliwice, pp. 61-66, November 22nd - 23rd, 2001, 2001.
+
+2.6 PAPER 6 : GitHub Copilot
+
+Author : 1) Gavin D. Howard
+
+Theory:
+A step-by means of-step system for solving a problem or undertaking some quit no new creativity is implemented whilst executing a step-by way of-step process. If placing copyrighted works via an algorithm creates a state of affairs where copyright does now not follow to the output of the algorithm, then felony absurdities including monolith do, in truth, paintings as intended: they erase copyright and distribute works with out infringing. Github may claim that its use of copyrighted code in training copilot and distributing its output isn't the same as running compilers on source code due to the fact it is greater transformative than compilers are, however doing so would additionally be unreasonable. The cause is due to the fact compilers can, in truth, transform the code they're given in ways that copyright regulation could take into account transformative. An example is clang turning an linear algorithm right into a consistent-time set of rules.
+
+References :
+[1] United States Court of Appeals for the Second Circuit. Authors Guild v. Google. https://h2o.law.harvard.edu/collages/37267. Accessed on 2021-08-18. Oct. 2015. 
+[2] Jonathan Band. The Google Library Project: Both Sides of the Story. https : / / quod . lib . umich . edu / p / plag / 5240451 . 0001 . 002/ -- google-library-project-both-sides-of-the-story?rgn=main; view=fulltext. Accessed on 2021-08-18. 2006. 
+[3] Scott Carey. Developers react to GitHub Copilot. https://www.infoworld. com/article/3624688/developers- react- to- github- copilot. html. Accessed on 2021-08-18. July 2021. 
+[4] United States Congress. 17 U.S. Code § 106 - Exclusive rights in copyrighted works. https://www.law.cornell.edu/uscode/text/17/106. Accessed on 2021-08-19. 
+[5] eevee. Code Laundering. https : / / twitter . com / eevee / status / 1410037309848752128. Accessed on 2021-08-19. June 2021.
+[6] Free Software Foundation. GNU General Public License. https : / / www.gnu.org/licenses/#GPL. Accessed on 2021-08-18. 
+[7] Nat Friedman. In general... https://news.ycombinator.com/item? id=27678354. Accessed on 
+
+2.7 PAPER 7 : Copilot: A Hard Real-Time Runtime Monitor
+
+Author : 1) Lee Pike
+	   2) Alwyn Goodloe
+	   3) Robin Morisset
+	   4) Sebastian Niller
+
+Theory:
+The copilot language is a synchronous language defined by using a set of stream Equations. A circulate is an endless series of values from some type. A movement Index i is a non-poor integer; for circulation σ, σ(i) is the movement’s fee at indexI. It's miles assumed that the cost stored in circulate index zero σ(zero) is an preliminary value.To get a experience for the copilot language, take into account the subsequent property of an Engine controller:If the temperature rises extra than 2.Three levels inside zero.2 seconds, then the engine is immediately shut off.Expect the length at which the temperature variable temp is sampled is zero.1Seconds, and the close-off variable is shutoff . Then the assets can be designated as follows in copilot:Temps = [0, 0, 0] ++ extf temp 1 Overtemprise = drop 2 var temps > const 2.3 + var temps Cause = (var overtemprise) implies (extb shutoff 2) When the flow cause turns into false, the belongings has failed.A copilot monitor specification is a nonempty set of circulate equations defining typed screen variables m0, m1, . . . , mn of the shape mi = exp whereExp is an expression constructed from the bnf grammar in figure 1. (we barely Simplify the grammar from our implementation, omitting expression terminals and type declarations.) in the grammar, the terminal <Identif ier> is a valid C99 variable name, and < n > is a non-terrible integer. Streams of Booleanvalues are used as triggers, signalling a property succeeding or failing. Informally, the intended semantics for copilot is the semantics of lazy streams, Like in haskell [Jon02]. Specially, the operation ++ is lazy listing-append, and Appends a finite listing onto a circulation. The operation drops n drops the first n Indexes from moves.
+
+stream definition	 EXP = V AR | CV AR | AP P | DROP | F UN | CONST
+monitor variable 	V AR = var <Identif ier>
+sample expression 	CV AR = CT Y P E <Identif ier> <n>
+typed program variable CT Y P E = extB | extI8 | extI16 | extI32 | extI64 |extW8 | extW16 |                 extW32 | extW64 | extF | extD
+
+stream drop 		DROP = drop <n> e
+[where e = V AR | CV AR | DROP | CONST]
+stream append 	AP P = l ++ EXP  [where l is a finite list of constants]
+function application 	F UN = f(e0, e1, . . . , en), [where
+ei = V AR | CV AR | DROP | F UN | CONST]
+constant stream CONST = const c  [where c is a constant]
+ 
+
+References :
+[1] [ACD+10] E. Axelsson, K. Claessen, G. Dvai, Z. Horvth, K. Keijzer, B. Lyckegrd, A. Persson, M. Sheeran, J. Svenningsson, and A. Vajda. Feldspar: a domain specific language for digital signal processing algorithms. In 8th ACM/IEEE Int. Conf. on Formal Methods and Models for a Codesign, 2010. 
+[2] [CDR04] F. Chen, M. D’Amorim, and G. Ro¸su. A formal monitoring-base framewrok for software development analysis. In Proceedings of the 6th International Conference on Formal Engineering Methods (ICFEM’04), number 3308 in LNCS, pages 357–373. Springer-Verlag, 2004. 
+[3] [DDE08] M.B. Dwyer, M. Diep, and S. Elbaum. Reducing the cost of path property monitoring through sampling. In Proceedings of the 23rd International Conference on Automated Software Engineering, pages 228–237, 2008. 
+[4] [DSS+05] B. D’Angelo, S. Sankaranarayanan, C. Snchez, W. Robinson, Zohar Manna, B. Finkbeiner, H. Spima, and S. Mehrotra. LOLA: Runtime monitoring of synchronous systems.
+
+
+
+
+
+
+
+2.8 PAPER 8 : Runtime Monitoring On Hard Real-Time Operating Systems
+
+Author : 1) Kaveh Darafsheh
+
+Theory :
+Vxworks 653 is an authorized, do178c stage a, tough real-time running device that complies with the arinc 653p1-three specification. Arinc specification 653 element 1 defines an apex (application/govt) interface among an working machine and hosted programs. They offer facilities required for a couple of functions to reside at the equal hardware, without effecting one another, negatively or undoubtedly .
+This concept of non-interference is commonly referred to as strong partitioning. Particularly sturdy partitioning needs that no application characteristic in one partition can underneath any instances: effect the temporal processing resource allocation of any other partition; access the reminiscence assigned to another partition; adversely have an effect on the i/o sources of any other partition
+	
+
+
+
+
+
+The quantity configuration of the gadget must be as follows. The module os ought to no longer require configuration because the build shape fits the module hardware and the module hardware is constant. Trade is handiest essential whilst there is a hardware exchange or driving force change. The configuration for the partition os must be minimum as it best calls for indicating which os or shared libraries are being used. Walls ought to require extra configuration. Its configuration consists 
+
+of software, shared library, shared records region, and shared i/o location configuration in addition to man or woman settings including partition health tracking. Shared library is present in all walls since the partition os is a shared library. An instance configuration is shown in parent 
+References :
+[1] Aeronautical Radio Inc. (2010). Avionics Application Software Standard Interface Part 1 – Required Services (ARINC Specification 653P1-3). 
+[2] Ananda, C. M., Nair, S., & Mainak, G. H. (2013). ARINC 653 API and its application–An insight into Avionics System Case Study. Defence Science Journal, 63(2), 223-229. 
+[3] ArduPilot WWW site. http://ardupilot.com. 
+[4] ArduPilot source code WWW site. https://github.com/diydrones/ardupilot. 
+[5] Azadmanesh, M. H., & Kieckhafer, R. M. (2000). Exploiting omissive faults in synchronous approximate agreement. Computers, IEEE Transactions on, 49(10), 1031-1042.
+[6] Bak, S., Johnson, T. T., Caccamo, M., & Sha, L. (2014, December). Real-time reachability for verified simplex design. In Real-Time Systems Symposium (RTSS), 2014 IEEE (pp. 138-148). IEEE.
+[7] Goodloe, A. E., & Pike, L. (2010). Monitoring distributed real-time systems: A survey and future directions. National Aeronautics and Space Administration, Langley Research Center. 
+2.9 PAPER 9 : Copilot: Monitoring Embedded Systems
+
+Author : 1) Lee Pike
+	    2) Nis Wegmann
+	    3) Sebastian Niller and Alwyn Goodloe
+
+Theory : 
+Preferably, the rv methods that have been developed inside the literature might be carried out straightforwardly to extremely-important structures. Regrettably, those systems have constraints violated by means of regular rv tactics. We summarize those constraints using the acronym “facts”:
+• capability: the rv device cannot change the goal’s conduct (until the    goal has violated a specification).
+• certifiability: the rv device should not make re-certification (e.G., do-178b [10]) of the goal hard.
+• timing: the rv system must now not intervene with the target’s timing.
+• switch: the rv gadget have to no longer exhaust length, weight, and electricity (change) tolerances.
+
+Copilot comes with a ramification of gear, such as a pretty-printer, an interpreter, two compilers targeting c, and a verifier front-give up. Inside the following section, we will exhibit some of these equipment and their utilization.
+
+References :
+1. John Rushby. Software verification and system assurance. In Intl. Conf. on Software Engineering and Formal Methods (SEFM), pages 3–10. IEEE, November 2009. 
+2. Gerwin Klein, June Andronick, Kevin Elphinstone, Gernot Heiser, David Cock, Philip Derrin, Dhammika Elkaduwe, Kai Engelhardt, Rafal Kolanski, Michael Norrish, Thomas Sewell, Harvey Tuch, and Simon Winwood. seL4: Formal verification of an OS kernel. Communications of the ACM (CACM), 53(6):107–115, June 2010. 4
+3. R. W. Butler and G. B. Finelli. The infeasibility of quantifying the reliability of lifecritical real-time software. IEEE Transactions on Software Engineering, 19:3–12, January 1993.
+
+2.10 PAPER 10 : Copilot - a Coprocessor-based Kernel Runtime Integrity Monitor
+
+Author :   1) Nick L. Petroni
+	    2) Timothy Fraser
+	    3) Jesus Molina
+	    4) William A. Arbaugh
+
+Theory :
+So one can perform its challenge of tracking host reminiscence, the copilot coprocessor need to meet, at a minimum, the following set of requirements: unrestricted reminiscence get right of entry to. The coprocessor must be able to get admission to the system's important reminiscence. Furthermore, it need to be able to get entry to the whole variety of physical reminiscence- a subset isn't enough. transparency. To the maximum degree possible, the coprocessor ought to not be seen to the host processor. At a minimal, it must not disrupt the host's normal activities and need to require no modifications to the host's running gadget or device software program. independence. The coprocessor should now not rely on the host processor for get admission to to resources - inclusive of essential reminiscence, logging, cope with translation, or any other undertaking. The coprocessor have to preserve to function irrespective of the strolling country of the host system, specifically whilst it's been compromised. enough processing electricity. The coprocessor will, at a minimum, need in order to manner large quantities of memory successfully. Moreover, the choice of hashing as a way of integrity protection locations at the coprocessor the extra requirement of being capable of carry out and examine such hashes. enough memory assets. The coprocessor need to contain enough long-term storage to keep a baseline of device country. This precis of a non-compromised host is fundamental to the proper functioning of the auditor. Furthermore, the coprocessor ought to have enough on-board, non-gadget ram that may be used for its personal private calculations. out-of-band reporting. The coprocessor must be able to securely report the state of the host device. To accomplish that, there have to be no reliance on a probably-compromised host, even to perform fundamental disk or community operations. The coprocessor must have its very own comfy channel to the admin station.
+              The ebsa-285 pci add-in card meets all the above requirements and provides a robust 
+
+foundation for an preliminary prototype. The remainder of this segment briefly describes how these requirements are met via our ebsa implementation, which include some of the technical info that allow it to work in an i386 host.
+Symbols taken from system.Map 
+References :
+[1] W. Arbaugh, D. J. Farber, and J. M. Smith.
+A secure and reliable bootstrap architecture.
+In Proceedings of the 1997 IEEE Symposium on Security and Privacy, Oakland, CA, May 1997.
+[2] D. P. Bovet and M. Cesati.
+Understanding the Linux Kernel.
+O'Reilly & Associates, Inc., second edition, December 2002.
+[3] D. Brumley.
+invisible intruders: rootkits in practice.
+;login: The Magazine of USENIX and SAGE, September 1999.
+[4] D. T. Campbell and J. C. Stanley.
+Experimental and Quasi-Experimental Designs for Research.
+Houghton Mifflin Company, 1963.
+
+
+
+
+2.11 PAPER 11 : Machine Learning for Programming Languages
+
+Author : 1) Raphael Jenni
+
+Theory :
+This paper assumes that the reader knows the fundamentals of programming language constructs and is capable of application.
+Earlier than diving into the primary content material of the paper, we will study four examples. The ones should help get a feel for the paper’s wellknown idea and a few viable use instances of dl4pl
+An example might be writing a fibonacci feature in kotlin. By using just offering feature name a laugh fibonacci, the copilot indicates the following code final touch:
+
+
+
+
+
+
+
+
+
+              This assistance by itself is already quite exceptional, however it's far just a extraordinarily commonplace code snippet. The following code demonstrates how the copilot leverages the context to provide suggestions
+
+1https://copilot.Github.Com
+2https://openai.Com/blog/openai-codex/.
+
+
+
+Visualization of the distinct ai designations and their relationships. The nesting visualized as 
+                                                                                                                                                                      
+               russian dolls.Tsne (t-distributed stochastic neighbor embedding) is a visualization technique, popular for visualizing excessive-dimensional facts.
+
+
+
+
+References :
+[1] [BRTV] Benjamin Bichsel, Veselin Raychev, Petar Tsankov, and Martin Vechev. Statistical Deobfuscation of Android Applications.
+[2][BRV] Pavol Bielik, Veselin Raychev, and Martin Vechev. Learning a Static Analyzer from Data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.12 PAPER 12 : Automatic Program Repair with OpenAI’s Codex
+
+Author : 1) Julian Aron Prenner
+         2) Romain Robbes
+
+Theory :
+A.	Dataset
+                      In all of our experiments we depend on quixbugs , a benchmark of forty buggy set of rules implementations, inclusive of their accurate versions and take a look at cases. The benchmark is bilingual, all algorithms are implemented in python and java. Not like the python variations, which incorporate docstrings with short descriptions of the respective algorithms, java variations come without descriptive feedback; see figure 1 for an instance.
+B.	Spark off engineering
+                      Because the best way to have interaction with codex through the set off that it's far the given, we test with numerous exceptional input configurations. All configurations use a variation of the subsequent template (python version): 
+
+                      Buggy versions of the set of rules calculating the best not unusual divisor between  integers in python and java. The recursive call have to read gcd(b, a % b)
+
+
+C.	Codex Parameters
+
+
+
+
+
+
+
+
+
+
+D.	Assessment for each configuration and language we manually evaluated the output of codex, the use of the following process:
+• whilst codex output multiple functions we only considered the primary and discarded the remaining output.
+• if the output exactly matched the right floor-fact patch, we taken into consideration it correct.
+• we inspected the code to determine whether the output changed into semantically equivalent to the floor reality.
+              • whilst in doubt, we ran the associated take a look at cases.
+              • if any check failed, the output became considered wrong.
+
+References :
+               [1] T. Britton, L. Jeng, G. Carver, et al., Reversible Debugging Software “Quantify the Time and Cost Saved Using Reversible Debuggers”.
+[2] T. D. LaToza, G. Venolia, and R. DeLine, “Maintaining mental models: A study of   developer work habits,” in Proceeding of the 28th International Conference on Software Engineering - ICSE ’06, Shanghai, China: ACM Press, 2006, p. 492.
+[3] C. L. Goues, T. Nguyen, S. Forrest, et al., “GenProg: A Generic Method for Automatic
+2.13 PAPER 13 : A Predictive Text Completion Software in Python
+
+Author : 1) Wong Jiang Fung
+
+Theory :
+In the digital age, computers are regularly crucial for paintings and personal lifestyles. Meaning a dyslexic man or woman faces extra challenges than ever. The problem of writing thoughts down on a paper is now converted to typing and writing them down on computers. There are assistive era developed to useful resource dyslexic computer customers[3] which include
+1. Text-to-speech software – that allows you to listen the text in place of studying it.
+2. Concept mapping – so as to jot down mind on a map that's a representation of relationships among objects and ideas. - 1 - view metadata, citation and similar papers at core.Ac.Uk introduced to you via middle supplied by means of the python papers anthology  the python papers monograph 2: 6 court cases of pycon asia-pacific 2010
+3. Speech-to-textual content software program – alternative enter method, speech popularity is expensive and tough to expand. Contemporary services are available in best around six languages, for business motives.
+4. Special enter gadgets – created to fit the needs of dyslexic customers, also are high priced and no longer typically observed.
+A predictive textual content of entirety software program has the following functions for it to cope with the hassle of dyslexia:
+1. Get autocompletion guidelines from a dictionary.
+2. Examine phrases as the user types.
+              Three. Suits what the consumer sorts with what this system knows.
+Four. Autocomplete phrases and phrases on consumer's preference in any window.
+5. Show thought tooltips close to input region, no toolbar used.
+6. Portable, no set up needed.
+1. Blitztype (in python) http://www.Artwinauto.Com/downloads/typing-applications/blitztype.Html
+2. Typingaid (in autohotkey) http://www.Artwinauto.Com/downloads/typing-programs/typingaid.Html
+ 
+
+
+References :
+
+[1] Snowling, Margaret J., 2000, Dyslexia, 2nd, illustrated, Wiley-Blackwell.
+[2] Smythe, Ian, Dyslexia consultant, private conversation.
+[3] Smythe, Ian, 2010 , Dyslexia in the Digital Age: Making It Work, illustrated,    CONTINUUM.
+[4] http://www.autohotkey.com/
+[5] http://www.wxpython.org/
+[6] http://sourceforge.net/projects/pyhook/
+[7] http://sourceforge.net/projects/pywin32/
+
+
+2.14 PAPER 14 : Suggestion Mining from Opinionated Text
+
+Author : 1) Sapna Negi
+
+Theory :
+A broad announcement of our studies hassle might be, mining expressions of hints from opinionated text. There are several factors of the hassle that could lead to some of research questions. We perceive 3 extensive research questions that are the guiding map for our phd studies.
+• research question 1 (rq1): how do we outline recommendations in suggestion mining?
+• studies question 2 (rq2): how do we locate recommendations in a given textual content ?
+• research question three (rq3): how can hints be represented and summarised ?
+The following sections will deliver a greater special description of those elements, such as 
+
+the preliminary effects, demanding situations, and future guidelines.
+Implicit and express kinds of suggestions
+From which the counseled action or entity may be inferred. In remainder of the paper, we seek advice from explicit guidelines as hints.
+ In our preceding work (negi and buitelaar, 2015b), we prepared two datasets from motel and electronics opinions (desk 2) where suggestions focused to the man clients are classified. Just like the present microsoft tweets dataset, the wide variety of hints are very low in those datasets. As stated formerly, we additionally formulate annotation pointers for the explicit expression of tips, which caused a kappa rating of upto 0.86 because the inter-annotator settlement. In every other work (negi et al., 2016), we further become aware of feasible domain names and collection techniques, which are likely to offer concept wealthy datasets for schooling statistical classifiers.	
+References :
+[1] [Asher et al.2009] Nicholas Asher, Farah Benamara, and Yannick Mathieu. 2009.
+Appraisal of Opinion Expressions in Discourse. Lingvistic Investigationes, 31.2:279–292.
+[2] [Brun and Hagege2013] C. Brun and C. Hagege. 2013. Suggestion mining: Detecting 
+suggestions for improvements in users comments. In Proceedings of 14th International 
+Conference on Intelligent Text Processing and Computational Linguistics.
+
+
+
+ 2.15 PAPER 15 : Open Domain Suggestion Mining Leveraging Fine-Grained Analysis
+
+Author :      1) Shreya Singal
+              2) Tanishq Goel
+3) Shivang Chopra
+
+Theory :
+The growing reputation of on line evaluation forums like yelp1, and tripadvisor2 has spawned a popular line of take a look at concerning proposal mining. Inspiration mining can be defined as the class of opinions as inspiration or non-concept which helps corporations beautify their offerings in keeping with the customers’ desires. Manually going via the massive number of opinions and filtering out the relevant tips is a totally cumbersome system. Therefore agencies now emphasize on trying to find strong automated thought mining mechanisms. Apart from fashionable suggestions, choice makers in big corporates purpose to extract targeted hints to enhance their manufacturers or organizational practices
+[1]. This in turn results in a far much less studied sub-undertaking of open-area thought mining [2]. In contrast to most of the work completed presently in indomain inspiration mining, open-domain mining entails a multi-tier type in which the model no longer most effective segregates the suggestions from the non-recommendations, however also predicts the unique area to which the evaluation belongs.
+
+The main contributions of our work are as follows: • suggest a novel -segment transformer-based totally architecture for open-area proposal mining using finegrain evaluation. • leverage attention mechanism to gain state-of-theart overall performance in concept mining. • hire discourse marker primarily based oversampling to address the imbalance nature of the facts. • use an adapter-based totally switch getting to know mechanism in conjugation with transformer to improve schooling efficiency and overall performance. • carry out and in-intensity qualitative and quantitative evaluation to look at the practical, reproducibility and deployment components of our proposed pipeline.
+
+Formerly, lstms were the only way to correctly seize the semnatic cues in numerous sentiment analysis responsibilities. However, [19] proposed a novel architecture transformer, which changed the complex recurrent computations with attention mechanism. Transformers play a pivotal function in our architecture and feature the added gain of attentiondirected class of the reviews. The attention feature is a mapping from the d-dimensional enter values v onto the output (a that is parameterised by way of a set of key - value (okay, v ) pairs.
+
+
+
+References :
+[1] ——, “Inducing distant supervision in suggestion mining through part-of-speech
+              embeddings,” CoRR, vol. abs/1709.07403, 2017. [Online]. Available: http: 
+//arxiv.org/abs/1709.07403
+[2] M. Jain, M. Leekha, and M. Goswami, “A multi-task approach to open domain suggestion 
+mining (student abstract).” in AAAI, 2020, pp. 13 817–13 818.
+[3] L. Dong, F. Wei, Y. Duan, X. Liu, M. Zhou, and K. Xu, “The automated acquisition of 
+suggestions from tweets,” in Proceedings of the Twenty-Seventh AAAI Conference on 
+Artificial Intelligence, ser. AAAI’13. AAAI Press, 2013, p. 239–245.
+	[4] C. Brun and C. Hagege, “Suggestion mining: Detecting sug- ` gestions for improvement in users’ comments,” Res. Comput. Sci., vol. 70, pp. 199–209, 2013. 
+
+
+
+2.16 PAPER 16 : Big data analytics: a survey
+
+Author : 	1) Chun-Wei Tsai
+2) Chin-Feng Lai
+3) Han-Chieh Chao
+4) Athanasios V.Vasilakos
+
+Theory :
+As the statistics era spreads rapid, most of the records were born digital in addition to exchanged on net today. In line with the estimation of lyman and varian [1], the brand new facts stored in digital media devices have already been more than ninety two % in 2002, at the same time as the size of those new information became additionally greater than 5 exabytes. In reality, the troubles of reading the massive scale facts were now not all at once happened however were there for several years because the advent of facts is normally an awful lot less complicated than finding useful matters from the data. Despite the fact that computer structures today are a whole lot quicker than the ones in the Nineteen Thirties, the massive scale information is a stress to analyze with the aid of the computer systems we've nowadays.
+              Furthermore, despite the fact that several information analytics and frameworks have been              
+              presented in recent years, with their pros and cons being discussed in one of a kind    
+              research, a complete discussion from the angle of statistics mining and knowledge discovery 
+              in databases nevertheless is needed. As a end result, this paper is aimed at offering a quick 
+              review for the researchers at the information mining and allotted computing domains to 
+               have a fundamental concept to use or develop statistics analytics for massive statistics. 
+
+As shown in Fig. 3, the gathering, selection, preprocessing, and transformation operators are in the input part.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+References :
+1. Lyman P, Varian H. How much information 2003? Tech. Rep, 2004. [Online]. Available:
+http://www2.sims.berkeley. edu/research/projects/how-much-info-
+2003/printable_report.pdf.
+2. Xu R, Wunsch D. Clustering. Hoboken: Wiley-IEEE Press; 2009.
+3. Ding C, He X. K-means clustering via principal component analysis. In: Proceedings of the 
+Twenty-first Interna  tional Conference on Machine Learning, 2004, pp 1–9.
+               4.Kollios G, Gunopulos D, Koudas N, Berchtold S. Efficient biased sampling for approximate 
+               clustering and outlier detection in large data sets. IEEE Trans Knowl Data Eng. 2003;15(5):1170–87.
+5. Fisher D, DeLine R, Czerwinski M, Drucker S. Interactions with big data analytics. Interactions. 2012;19(3):50–9.
+
+2.17 PAPER 17 : Big Data Analytics: Challenges And Applications For Text, Social Media Data.
+
+Author : 	1) Jai Prakash Verma
+2) Smita Agrawal
+3) Bankim Patel
+4) Atul Patel
+
+Theory :
+Big information anlytics refers to the manner of amassing, organizing, analyzing massive facts sets to find out exclusive styles and different beneficial records. Big facts analytics is a hard and fast of technology and strategies that require new types of integration to disclose big hidden values from big datasets which are one of a kind from the same old ones, more complicated, and of a large enormous scale. It specially makes a speciality of solving new issues or old problems in higher and powerful ways. Crm (consumer dating management): predictive analytics is beneficial in crm in fields along with advertising campaigns, sales, purchaser services etc. The focal point is to place their efforts efficiently on analyzeing product in demand and predict purchaser’s buying habits .
+               From predicting ticket confirmations of trains to checking for water supply leakages or even  
+               for finding the correct bride and groom, big information is being used in some of creative 
+               methods in india. Following are few uses of huge information analytics in india in previous 
+               couple of years [3,9].
+
+
+
+A) win elections (go out poll).
+B) locating an excellent suit.
+C) detecting water leakages.
+D) gaining insights into purchasing behavior.
+E) ensuring right water supply.
+F) improve india’s economic inclusion ratio.
+G) enhance product improvement.
+H) predict price tag confirmations for trains.
+
+
+References :
+[1] Web content available on the link: ―http://www.sas.com/en_us/insights/big-
+data/what-is-bigdata.html‖ on the dated: 16-08-2015
+[2] Web content available on the link: ―http://www-
+01.ibm.com/software/data/bigdata/what-is-bigdata.html‖ on the dated: 16-08-2015
+[3] Web content available on the link: ―http://www.dqindia.com/8-innovative-examples-
+of-big-datausage-in-india/‖ on the dated: 16-08-2015 International Journal on Soft 
+Computing, Artificial Intelligence and Applications (IJSCAI), Vol.5, No.1, February 2016 50
+[4] Web content available on the link: 
+―http://searchbusinessanalytics.techtarget.com/definition/big-dataanalytics‖ on the 
+dated: 16-08-2015
+[5] Web content available on the link: ―https://www.statsoft.com/textbook/text-mining‖ 
+on the dated: 16- 08-2015
+[6] Web content available on the link: ―https://www.predictiveanalyticstoday.com/text-
+analytics‖ on the dated: 16-08-2015
+[7] Web content available on the link: ―https://gigaom.com/2014/01/24/why-video-is-the-
+next-big-thingin-big-data/‖ on the dated: 16-08-2015
+
+
+
+2.18 PAPER 18 : A Study And Survey Of Big Data Using Data Mining Techniques.
+
+Author : 1) Tiju Cherian
+
+Theory :
+That allows you to make sure meaningful facts mining outcomes, it's far necessary to understand the facts being processed. Records mining approaches are generally affected by several elements, together with noisy statistics that include null values and untypical values (i.E. Outliers). Consistent with the converting nature of the data to be mined, extensions were brought to records mining; spatial records mining, for mining spatial statistics; net utilization mining and web content mining, for mining users’ behaviors and particular topics over the internet respectively; graph mining, for mining information in networks; and currently large data mining, that is an evolved department of large facts analytics to fit one of a kind kinds of facts.
+
+References :
+[1] Puneet Singh Duggal and Sanchita Paul, Big Data Analysis : Challenges and Solutions.
+[2] Wei Fan and Albert Bifet, Mining Big Data: Current Status, and Forecast to the Future,  
+SIGKDD Explorations, Volume 14, Issue 2, 2012.
+[3] S.Vikram Phaneendra and E.Madhusudhan Reddy, Big Data- solutions for RDBMS    
+problems- A survey, IEEE/IFIP Network
+2.19 PAPER 19 : Mining Big Data in Real Time
+
+Author : 1) Albert Bifet
+
+Theory :
+Huge information is a new time period used to identify the datasets that because of their big length, we cannot manage them with the standard facts mining software program equipment. Rather than defining “big information” as datasets of a concrete large length, as an example inside the order of importance of petabytes, the definition is associated with the fact that the dataset is too big to be managed without using new algorithms or technology.The big records phenomenon is intrinsically related to the open source software. Massive agencies as fb, yahoo!, twitter, linkedin advantage and contribute running on open supply projects.There are many interesting ongoing educational and commercial research within the place, posted in most important meetings which includes kdd, icdm, ecml-pkdd, or journals which includes “records mining and information discovery", “system learning" or “magazine of system mastering research”.A new vital and challenging task can be the dependent sample category hassle. Styles are factors of (probably limitless) sets endowed with a partial order relation.
+
+References :
+[1] X. Amatriain. Mining large streams of user data for personalized recommendations.
+SIGKDD Explorations, 14(2), 2012.
+[2] Apache Cassandra, http://cassandra. apache.org.
+[3] Apache Hadoop, http://hadoop.apache.org.
+[4] Apache HBase, http://hbase.apache.org.
+[5] Apache Mahout, http://mahout.apache.org.
+[6] Apache Pig, http://www.pig.apache.org/.
+[7] L. Backstrom, P. Boldi, M. Rosa, J. Ugander, and S. Vigna. Four Degrees of Separation. 
+CoRR, abs/1111.4570, 2011.
+
+
+
+2.20 PAPER 20 : Text Mining in Big Data Analytics
+
+Author : 	1) Hossein Hassani
+2) Christina Beneki
+
+Theory :
+There are  kinds of textual content mining algorithms: supervised gaining knowledge of and unsupervised getting to know (the two terms originated in gadget getting to know strategies). Supervised getting to know algorithms are hired Whilst there is a set of predictors to expect a target variable. The algorithm uses the target’s found Values to teach a prediction version. Guide vector machines (svms) are a set of supervised mastering Strategies used for category and prediction. However, unsupervised getting to know strategies do No longer use a goal cost to train their fashions. In other words, the unsupervised gaining knowledge of algorithms use A fixed of predictors (capabilities) to show hidden systems in the information. Non-poor matrix factorization Is an unmanaged learning technique 1. Figuring out text polarity to determine whether or not a given text is genuine in nature (i.E., it unbiasedly Describes a particular scenario or event and refrains from imparting a high-quality or a bad Opinion on it) or not (i.E., it feedback on its concern matter and expresses precise critiques on it), Which amounts to the categorization of binary texts into subjective and goal [18,19]. 2. Figuring out textual content polarity to determine if a given subjective text posits a effective or terrible opinion On the subject matter [18,20]. 3. Figuring out the volume of textual content polarity to categorize the positive opinion extended with the aid of a text on its Difficulty depend as weakly wonderful, mildly tremendous, or strongly advantageous [21,22]. Nuzzo et al. [235] developed a fixed of tools to find out new family members between genes and among Genes and sicknesses so it may be used to construct more likely hypotheses on gene-ailment institutions. In Order to discover new possibilities, they carried out an algorithm with the subsequent steps at the abstracts of Published articles from ”pubmed“ databases:
+              1. Extract standards on terms describing genes and diseases from abstracts.
+              2. Derive genes-sickness annotation. Big information cogn. Comput. 2020, 4, 1 19 of 34
+              3. Use similarity metrics to demonstrate the relevance among genes, which measures the  
+              terms Shared among genes to identifies the feasible relations. Four. Summarize the  
+              resulting annotation network as a graph.
+The technique shows its energy to perceive new possible gene-sickness relations and
+builds feasible Hypotheses, as well as extracts the existing information from the
+                     abstracts. Even though their technique is Effective, it cannot be without problems used 
+for different programs since it makes use of an already existing structured 
+Understanding base (e.G., unified scientific language device) to extract standards. In 
+many applications,
+                      This type of know-how base both does no longer exist or could be very constrained
+
+References :
+1.	Talabis, M.R.M.; McPherson, R.; Miyamoto, I.; Martin, J.L.; Kaye, D. Security and text 
+2.	mining. In Information Security Analytics; Talabis, M.R.M., McPherson, R., Miyamoto, I., Martin, J.L., Kaye, D., Eds.; Elsevier: Amsterdam, The Netherlands, 2015; pp. 123–150. [CrossRef]
+3.	Hearst, M.A. Text Data Mining. In The Oxford Handbook of Computational Linguistics; 
+4.	Mitkov, R., Ed.; Oxford University Press: Oxford, UK, 2005; pp. 616–662. [CrossRef]
+
+
+
+
+
+
+CHAPTER -3
+
+Methodology of text suggestion and grammar check:
+	The process of collecting, analysing and prediction of data is explained in the following pages.
+	The block diagram of the steps of the process is provided.
+3.1	Collection of statement of the content from the user:
+	The heading or statement of content is collected from the user between a special character in order to differentiate from content.
+	The statement helps to predict the content of the user and allows the software to provide suggestions.
+3.2	Pre-Processing:
+	The processing of collected data of the content statement can make predictions about the future contents of the page.
+	This helps software to provide suggestions to user to make the work easy and fast.
+3.3	Display and selection of suggestion:
+	The predicted outcome of the pre-processing is displayed to user to be used.
+	If the prediction is compatible user will select the suggestion by clicking on a special key.
+	If it is not compatible user can ignore the suggestion and move on typing himself.
+3.4	Collect privious text from the content:
+	Software will collect the data of previous texts of the content to provide suggestion for ongoing sentence.
+	It will read the content of the page entered so far and predict the text according to the data.
+3.5	Processing the data and prediction of output:
+	The data collected in step-4 is processed and output will be predicted.
+	This step will go on repeatedly along with the work.
+3.6	Display and selection of suggestion:
+	The predicted outcome of the processing is displayed to user to be used.
+	If the prediction is compatible user will select the suggestion by clicking on a special key.
+	If it is not compatible user can ignore the suggestion and move on typing himself.
+3.7	Checking for error in spelling and grammar:
+	The data collected is step-4 will be used to check for errors in the grammar and spelling of the content.
+	The errors are notified to user with rectified suggestions
+3.8	Display and selection of suggestion:
+	The predicted outcome of thestep-7 is displayed to user to be used.
+	If the prediction is compatible user will select the suggestion by clicking on the suggestion.
+	If it is not compatible user can ignore the suggestion and move on typing himself.
+
+
+ 
+ 
+
+
+
+ 
+CHAPTER-4
+
+4.1 Future Work:
+	In future we collect the frameworks like codex to open source the processing and prediction activities.
+	Develop the interface inside existing interface of word and notepads.
+	Provide extension to the os to launch the product into market.
+
+4.2 Conclusion:
+	The system will make the user more efficient and consumes less time.
+	Responsible usage of the system will posses great applications in everyday life.
+	It will reduce the requirement of taking courses to us specified platforms.
+	Finally this is going to be a highly scalable and marketable product.
+

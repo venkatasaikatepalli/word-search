@@ -16,15 +16,29 @@
 <body>
     <div id="app" class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center p-4">
+            <div class="col-12 text-center pt-5">
+                <br><br><br>
                 <h1>Another Google</h1>
+                <br><br><br>
             </div>
             <div class="col-3"></div>
             <div class="col-6">
                 <div class="input-group mb-3">
                     <input type="text" v-model="search_text" class="form-control" placeholder="Enter search word" aria-label="Enter search word" aria-describedby="button-addon2">
-                    <button class="btn btn-primary" type="button" id="button-addon2" @click="searchWords()"><ion-icon style="position: relative;top:3px;" name="search-outline"></ion-icon> Search</button>
+                    <button class="btn btn-primary" :disabled="search_text.length===0" type="button" id="button-addon2" @click="searchWords()"><ion-icon style="position: relative;top:3px;" name="search-outline"></ion-icon> Search</button>
                 </div>
+                <span class="text-secondary">Plese enter a word for search.</span>
+                <br><br>
+            </div>
+            <div class="col-12"></div>
+            <div class="col-3"></div>
+            <div class="col-6">
+                <b>Search Combinations:</b> <br>
+                <ul class="list-inline" v-if="results">
+                    <li v-for="(item, idx) in results" :key="idx">{{item}}</li>
+                </ul>
+                <span class="text-secondary" v-else-if="search_text.length===0">Plese enter search words.</span>
+                <span class="text-secondary" v-else>Plese click on search.</span>
             </div>
         </div>
     </div>
@@ -34,17 +48,18 @@
         createApp({
             data() {
                 return {
-                    search_text: null,
+                    search_text: "",
                     results: null
                 }
             },
             methods: {
                 searchWords() {
+                    const that = this;
                     axios.post('/word/', {
-                        search_text: this.search_text
+                        search_text: that.search_text
                     })
                     .then(function (response) {
-                        console.log(response);
+                        that.results = response.data;
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -53,6 +68,16 @@
             }
         }).mount('#app')
     </script>
+    <style>
+        .list-inline li {
+            border-bottom: 1px solid #dedede;
+            padding: 10px 5px;
+            cursor: pointer;
+        }
+        .list-inline li:hover {
+            background-color: #efefef;
+        }
+    </style>
 </body>
 
 </html>
