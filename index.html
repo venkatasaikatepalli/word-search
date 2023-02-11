@@ -25,18 +25,19 @@
             <div class="col-6">
                 <div class="input-group mb-3">
                     <input type="text" v-model="search_text" class="form-control" placeholder="Enter search word" aria-label="Enter search word" aria-describedby="button-addon2">
-                    <button class="btn btn-primary" :disabled="search_text.length===0" type="button" id="button-addon2" @click="searchWords()"><ion-icon style="position: relative;top:3px;" name="search-outline"></ion-icon> Search</button>
+                    <button class="btn btn-primary" :disabled="search_text.length===0 || search_text.split(' ').length<4" type="button" id="button-addon2" @click="searchWords()"><ion-icon style="position: relative;top:3px;" name="search-outline"></ion-icon> Search</button>
                 </div>
-                <span class="text-secondary">Plese enter a word for search.</span>
+                <span class="text-secondary">Plese enter combnination of 4 words.</span>
                 <br><br>
             </div>
             <div class="col-12"></div>
             <div class="col-3"></div>
             <div class="col-6">
                 <b>Search Combinations:</b> <br>
-                <ul class="list-inline" v-if="results">
+                <ul class="list-inline" v-if="results && results.length>0">
                     <li v-for="(item, idx) in results" :key="idx">{{item}}</li>
                 </ul>
+                <span class="text-danger" v-else-if="results && results.length===0">No search results found with words combination, Please enter another combination.</span>
                 <span class="text-secondary" v-else-if="search_text.length===0">Plese enter search words.</span>
                 <span class="text-secondary" v-else>Plese click on search.</span>
             </div>
@@ -63,6 +64,7 @@
                     })
                     .catch(function (error) {
                         console.log(error);
+                        that.results = [];
                     });
                 }
             }
